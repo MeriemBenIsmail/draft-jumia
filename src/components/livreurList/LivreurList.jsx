@@ -20,7 +20,7 @@ export default function LivreurList(props) {
   }
   const getJour = (mm,dd,id) => {
 
-    Axios.get('https://localhost:3001/jour'+mm+"/"+dd+"/"+id).then( (response) => {
+    Axios.get('https://draft-jumia.herokuapp.com/jour'+mm+"/"+dd+"/"+id).then( (response) => {
 
       setJour(response.data);
       console.log(jour);
