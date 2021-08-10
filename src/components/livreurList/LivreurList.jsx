@@ -6,8 +6,8 @@ import Axios from 'axios';
 export default function LivreurList(props) {
 
   const [livreurList,setLivreurList] = useState([]);
+  const [jour,setJour] = useState([]);
  
-
 
   const getLivreurs = (id) => {
 
@@ -18,12 +18,24 @@ export default function LivreurList(props) {
     });
 
   }
+  const getJour = (mm,dd,id) => {
+
+    Axios.get('https://localhost:3001/jour'+mm+"/"+dd+"/"+id).then( (response) => {
+
+      setJour(response.data);
+      console.log(jour);
+      
+    });
+
+  }
+  getJour("2021-06-06","2021-06-06",props.id);
 
   return (
     <div>
+    
+                  
 
     {getLivreurs(props.id)}
-
       {livreurList.map( (val,key) => {
 
           return (
@@ -31,7 +43,7 @@ export default function LivreurList(props) {
               <div className="livreurList">
                   
                   <div className="item">
-                    <h4>Livreur:</h4>
+                    <h4>Livreur lala:</h4>
                     <p>{val.Livreur}</p>
                   </div>
                   <div className="item">
@@ -42,7 +54,7 @@ export default function LivreurList(props) {
                     <h4>Derniere Transaction:</h4>
                     <p>{val.Derniere_Transaction}</p>
                   </div>
-                  
+                
                 
               </div>
               
