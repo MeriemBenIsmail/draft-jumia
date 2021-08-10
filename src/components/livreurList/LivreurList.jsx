@@ -28,31 +28,31 @@ export default function LivreurList(props) {
     });
 
   }
-  getJour("2021-06-06","2021-06-06",props.id);
+  
 
   return (
     <div>
     
                   
 
-    {getLivreurs(props.id)}
-      {livreurList.map( (val,key) => {
+    {getJour("2021-06-06","2021-06-06",props.id)}
+      {jour.map( (val,key) => {
 
           return (
           
               <div className="livreurList">
                   
                   <div className="item">
-                    <h4>Livreur lala:</h4>
-                    <p>{val.Livreur}</p>
+                    <h4>Livreur :</h4>
+                    <p>{props.id}</p>
                   </div>
                   <div className="item">
                     <h4>Nombre de transactions:</h4>
-                    <p>{val.Nombre_de_transaction}</p>
+                    <p>{val.DernierMoisActif}</p>
                   </div>
                   <div className="item">
                     <h4>Derniere Transaction:</h4>
-                    <p>{val.Derniere_Transaction}</p>
+                    <p></p>
                   </div>
                 
                 
