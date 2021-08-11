@@ -1,11 +1,20 @@
 import './App.css';
+import Navbar from './components/navbar/Navbar';
+import { BrowserRouter as Router} from 'react-router-dom';
+import Hero from './components/Hero/Hero';
 
-import LivreurList from './components/livreurList/LivreurList';
 function App() {
+  // livreur ID example = "563-GH ---- Tarek Bergachi"
   return (
-    <div className="App">
 
-      <LivreurList id="563-GH ---- Tarek Bergachi"/>
+     <div className="App">
+      <Router>
+
+        <Navbar id="563-GH ---- Tarek Bergachi"/>
+
+      </Router>
+      <Hero />
+      
       
     </div>
   );

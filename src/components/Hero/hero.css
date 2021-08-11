@@ -1,0 +1,70 @@
+.Hero {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.wavyTitle
+{
+  align-self: center;
+  position: relative;
+  margin-top: 2em;
+  -webkit-box-reflect: below -12px linear-gradient(transparent,rgba(0,0,0,0.5));
+  margin-bottom: 2em;
+
+}
+.wavyTitle span 
+{
+  position: relative;
+  display: inline-block;
+  color: #eea849;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin: 0 5px 0 5px;
+
+}
+
+.hero_container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.global {
+  padding: 3rem;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  border-bottom: 2px solid #eea849 ;
+  
+  
+}
+.hero_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.label {
+  font-size: 1.7em;
+  color:#F2C94C;
+  font-weight: 600;
+}
+.content {
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

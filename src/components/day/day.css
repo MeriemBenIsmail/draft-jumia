@@ -1,0 +1,41 @@
+.Day {
+  margin: 3rem 20px 3rem 20px;
+  padding:3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.day_item {
+  flex: 0.33;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px 0 30px;
+}
+.day_item h3 {
+  text-align: center;
+  color:#00CDAC;
+  font-size: 1.3em;
+}
+
+.progressPic {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 33px;
+}
+.day_item span {
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.face {
+
+  width: 30px;
+  height: 30px;
+  margin-left: 10px ;
+}
+
+

@@ -1,48 +1,40 @@
 import './day.css';
-import { useState } from 'react';
-import Axios from 'axios';
+
 
 export default function Day(props) {
 
-  const [jour,setJour] = useState([]);
-
-
-  const getJour = (mm,dd,id) => {
-
-    Axios.get('https://draft-jumia.herokuapp.com/jour/'+mm+"/"+dd+"/"+id).then( (response) => {
-
-      setJour(response.data);
-    
-      
-    });
-
-  }
+ 
   return (
-    <div>
-    
-                  
 
-    {getJour(props.dd,props.dd,props.id)}
-  
-      { jour.map( (val,key) => {
+    <div className="Day">
+
+      <div className="day_item">
+        <h3>
+          Nombre De Transaction Du Dernier Jour-1 Actif
+        </h3>
+        <p>
+                10
+        </p>
+
+      </div>
+      <div className="day_item">
+        <h3>
+          Nombre De Transaction Du Dernier Jour Actif
+        </h3>
+        <p>
+                12
+        </p>
+
+      </div>
+      <div className="day_item">
+        <img className="progressPic" src={props.pic} alt="" />
+        <span>{props.comment}
+        <img src={props.face} alt="" className="face"/>
+        </span>
         
+      </div>
 
-          return (
-          
-              <div key={key}>
-                  
-                  <div>
-                    <h4>Nombre de transactions du dernier jour actif:</h4>
-                    <p>{val.DernierJourActif}</p>
-                  </div>
-                  
-            
-              </div>
-              
-          );
-
-    })}
-      
     </div>
-  )
+  );
+ 
 }
