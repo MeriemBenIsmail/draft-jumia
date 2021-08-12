@@ -1,7 +1,7 @@
 .Hero {
   display: flex;
   flex-direction: column;
-  
+  margin-top: 150px;
 }
 
 .wavyTitle
@@ -17,11 +17,16 @@
 {
   position: relative;
   display: inline-block;
-  color: #eea849;
+  color: #3a3a3a;
   font-size: 3em;
   text-transform: uppercase;
   margin: 0 5px 0 5px;
+  cursor: pointer;
 
+
+}
+.wavyTitle span:hover {
+  color:#eea849;
 }
 
 .hero_container {
@@ -32,23 +37,33 @@
 
 .global {
   padding: 3rem;
-  display: flex;
-  justify-content:space-between;
-  align-items: center;
   border-bottom: 2px solid #eea849 ;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns:repeat(auto-fit,minmax(20rem,25rem)) ;
+  grid-gap: 3rem;
+  justify-content: center;
   
   
 }
 .hero_item {
+  transition: 0.3s;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+  cursor: pointer;
   
+  
+}
+.hero_item:hover {
+  transform: scale(1.05);
 }
 .label {
   font-size: 1.7em;
   color:#F2C94C;
+  text-align: center;
   font-weight: 600;
 }
 .content {

@@ -1,0 +1,18 @@
+$mainColor:  #f46b45;
+$secondColor: #eea849;
+$bg-color: #f1f1f1;
+$primary-color: #000;
+$highlight-color: #f46b45;
+$light-color: #fff;
+$border-color: #ddd;
+$ff-primary: 'Poppins', sans-serif;
+
+$width: 768px;
+
+
+@mixin mobile {
+
+  @media (max-width: #{$width}) {
+    @content
+  }
+}

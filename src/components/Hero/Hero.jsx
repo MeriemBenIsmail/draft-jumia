@@ -1,8 +1,10 @@
 import './hero.css';
 import Day from '../day/Day';
 export default function Hero() {
+  /*<Day face="images/happy.png" pic="images/rise.svg" comment="Bon Travail !"/>
+          <Day face="images/sad.png" pic="images/low-price.png" comment="Bon Courage !"/> */
   return (
-    <div className="Hero">
+    <div className="Hero" id="hero">
 
       
         <div className="wavyTitle">
@@ -43,8 +45,7 @@ export default function Hero() {
             
             
           </div>
-          <Day face="images/happy.png" pic="images/rise.svg" comment="Bon Travail !"/>
-          <Day face="images/sad.png" pic="images/low-price.png" comment="Bon Courage !"/>
+          
       
         </div>
         
