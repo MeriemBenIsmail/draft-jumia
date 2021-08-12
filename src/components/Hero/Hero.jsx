@@ -1,5 +1,5 @@
-import './hero.css';
-import Day from '../day/Day';
+import './hero.scss';
+
 export default function Hero() {
   /*<Day face="images/happy.png" pic="images/rise.svg" comment="Bon Travail !"/>
           <Day face="images/sad.png" pic="images/low-price.png" comment="Bon Courage !"/> */
