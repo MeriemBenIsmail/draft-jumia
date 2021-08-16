@@ -6,7 +6,7 @@ export default function Menu(props) {
       <ul>
         <li>
           <i class="fas fa-id-badge"></i>
-          <span>563-GH ---- Tarek Bergachi</span>
+          <span>{props.livreur}</span>
         </li>
         <li onClick={()=>props.setMenuOpen(false)}>
           <i class="fas fa-motorcycle"></i>

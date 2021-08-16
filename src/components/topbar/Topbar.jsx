@@ -15,7 +15,7 @@ export default function Topbar(props) {
           <div className="logo">G H A N D R I</div>
           <div className="itemContainer">
             <i class=" icon fas fa-id-badge"></i>
-            <span className="contentTag">563-GH ---- Tarek Bergachi</span>
+            <span className="contentTag">{props.livreur}</span>
 
           </div>
           
