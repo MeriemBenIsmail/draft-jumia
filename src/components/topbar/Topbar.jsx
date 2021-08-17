@@ -12,7 +12,7 @@ export default function Topbar(props) {
            <div className="itemContainer">
             
             
-            <img className="logoPic" src="images/jumia-logo.png" alt="logo" />
+            <img className="logoPic" src="/images/jumia-logo.png" alt="logo" />
             
 
           </div>

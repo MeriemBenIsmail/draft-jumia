@@ -23,9 +23,7 @@ function App() {
             
                  
         </Router>
-       {/*<Topbar livreur="682-GH ---- Amin Ghandri" menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-       <Menu livreur="682-GH ---- Amin Ghandri" menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-  <Hero livreur="682-GH ---- Amin Ghandri"/>*/}
+
            
     </div>
   );
