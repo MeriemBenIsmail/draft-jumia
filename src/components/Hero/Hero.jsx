@@ -212,7 +212,7 @@ export default function Hero(props) {
                     
                 
 
-                  })}
+                })}
                   {getEvalPic(monthData,monthData[0].DernierMoisActif_1,monthData[0].DernierMoisActif)}
                  {getYear(val.Derniere_Transaction,props.livreur)}
                   {year.map( (val,key) => {
