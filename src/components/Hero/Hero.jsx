@@ -2,7 +2,9 @@ import './hero.scss';
 import Axios from 'axios';
 import { useState } from 'react';
 import Table from '../table/Table';
+import { useParams } from "react-router";
 export default function Hero(props) {
+  const { id } = useParams();
 
 
  const [livreurList,setLivreurList] = useState([]);
@@ -142,7 +144,7 @@ export default function Hero(props) {
         </div>
         <div className="hero_container">
 
-        {getLivreurs(props.livreur)}
+        {getLivreurs({id})}
         {livreurList.map( (val,key) => {
           return (
 
@@ -166,7 +168,7 @@ export default function Hero(props) {
               </h4>
                         
             </div>
-                 {getDay(val.Derniere_Transaction,val.Derniere_Transaction,props.livreur)}
+                 {getDay(val.Derniere_Transaction,val.Derniere_Transaction,{id})}
                  {day.map( (val,key) => {
                       
           
@@ -174,7 +176,7 @@ export default function Hero(props) {
                 
                 
                   })}
-                 {getDay_1(val.Derniere_Transaction,val.Derniere_Transaction,props.livreur)}
+                 {getDay_1(val.Derniere_Transaction,val.Derniere_Transaction,{id})}
                  {day_1.map( (val,key) => {
                       
           
@@ -191,7 +193,7 @@ export default function Hero(props) {
                   })}
                   {getEvalPic(dayData,dayData[0].DernierJourActif_1,dayData[0].DernierJourActif)}
                  
-                 {getMonth(val.Derniere_Transaction,props.livreur)}
+                 {getMonth(val.Derniere_Transaction,{id})}
                  {month.map( (val,key) => {
                       
                 
@@ -199,7 +201,7 @@ export default function Hero(props) {
                 
 
                   })}
-                 {getMonth_1(val.Derniere_Transaction,props.livreur)}
+                 {getMonth_1(val.Derniere_Transaction,{id})}
                  {month_1.map( (val,key) => {
                       
                 
@@ -214,13 +216,13 @@ export default function Hero(props) {
 
                 })}
                   {getEvalPic(monthData,monthData[0].DernierMoisActif_1,monthData[0].DernierMoisActif)}
-                 {getYear(val.Derniere_Transaction,props.livreur)}
+                 {getYear(val.Derniere_Transaction,{id})}
                   {year.map( (val,key) => {
                         
                     yearData[0].DernièreAnnéeActive= val.DernierAnnéeActive;
                   
                   })} 
-                  {getYear_1(val.Derniere_Transaction,props.livreur)}
+                  {getYear_1(val.Derniere_Transaction,{id})}
                   {year_1.map( (val,key) => {
                         
                         if(val.DernierAnnéeActive_1){

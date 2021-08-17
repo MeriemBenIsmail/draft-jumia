@@ -1,6 +1,9 @@
 import "./topbar.scss";
-
+import { useParams } from "react-router";
 export default function Topbar(props) {
+
+  const { id } = useParams();
+
   return (
     <div className={"topbar " + (props.menuOpen && "active")}>
 
@@ -10,12 +13,13 @@ export default function Topbar(props) {
             
             
             <img className="logoPic" src="images/jumia-logo.png" alt="logo" />
+            
 
           </div>
           <div className="logo">G H A N D R I</div>
           <div className="itemContainer">
             <i class=" icon fas fa-id-badge"></i>
-            <span className="contentTag">{props.livreur}</span>
+            <span className="contentTag">{id}</span>
 
           </div>
           

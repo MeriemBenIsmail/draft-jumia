@@ -1,12 +1,13 @@
 import "./menu.scss";
-
+import { useParams } from "react-router";
 export default function Menu(props) {
+  const { id } = useParams();
   return (
     <div className={"menu " + (props.menuOpen && "active")}>
       <ul>
         <li>
           <i class="fas fa-id-badge"></i>
-          <span>{props.livreur}</span>
+          <span>{id}</span>
         </li>
         <li onClick={()=>props.setMenuOpen(false)}>
           <i class="fas fa-motorcycle"></i>
