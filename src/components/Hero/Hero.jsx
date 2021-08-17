@@ -109,16 +109,16 @@ export default function Hero(props) {
   const getEvalPic = (data,val_1,val) => {
     if ( val == val_1 ){
 
-      data[0].note =<img src="images/checkmark.png" className="evalPic" alt="" />;
+      data[0].note =<img src="/images/checkmark.png" className="evalPic" alt="" />;
 
 
     } else if(val > val_1) {
 
-      data[0].note =<img src="images/rise.svg" className="evalPic" alt="" />;
+      data[0].note =<img src="/images/rise.svg" className="evalPic" alt="" />;
 
     }
     else {
-      data[0].note =<img src="images/low-price.png" className="evalPic" alt="" />;
+      data[0].note =<img src="/images/low-price.png" className="evalPic" alt="" />;
 
     }
   }
@@ -144,7 +144,7 @@ export default function Hero(props) {
         </div>
         <div className="hero_container">
 
-        {getLivreurs({id})}
+        {getLivreurs({id}.id)}
         {livreurList.map( (val,key) => {
           return (
 
@@ -168,7 +168,7 @@ export default function Hero(props) {
               </h4>
                         
             </div>
-                 {getDay(val.Derniere_Transaction,val.Derniere_Transaction,{id})}
+                 {getDay(val.Derniere_Transaction,val.Derniere_Transaction,{id}.id)}
                  {day.map( (val,key) => {
                       
           
@@ -176,7 +176,7 @@ export default function Hero(props) {
                 
                 
                   })}
-                 {getDay_1(val.Derniere_Transaction,val.Derniere_Transaction,{id})}
+                 {getDay_1(val.Derniere_Transaction,val.Derniere_Transaction,{id}.id)}
                  {day_1.map( (val,key) => {
                       
           
@@ -193,7 +193,7 @@ export default function Hero(props) {
                   })}
                   {getEvalPic(dayData,dayData[0].DernierJourActif_1,dayData[0].DernierJourActif)}
                  
-                 {getMonth(val.Derniere_Transaction,{id})}
+                 {getMonth(val.Derniere_Transaction,{id}.id)}
                  {month.map( (val,key) => {
                       
                 
@@ -201,7 +201,7 @@ export default function Hero(props) {
                 
 
                   })}
-                 {getMonth_1(val.Derniere_Transaction,{id})}
+                 {getMonth_1(val.Derniere_Transaction,{id}.id)}
                  {month_1.map( (val,key) => {
                       
                 
@@ -216,13 +216,13 @@ export default function Hero(props) {
 
                 })}
                   {getEvalPic(monthData,monthData[0].DernierMoisActif_1,monthData[0].DernierMoisActif)}
-                 {getYear(val.Derniere_Transaction,{id})}
+                 {getYear(val.Derniere_Transaction,{id}.id)}
                   {year.map( (val,key) => {
                         
                     yearData[0].DernièreAnnéeActive= val.DernierAnnéeActive;
                   
                   })} 
-                  {getYear_1(val.Derniere_Transaction,{id})}
+                  {getYear_1(val.Derniere_Transaction,{id}.id)}
                   {year_1.map( (val,key) => {
                         
                         if(val.DernierAnnéeActive_1){
