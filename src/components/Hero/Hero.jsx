@@ -144,7 +144,7 @@ export default function Hero(props) {
         <div className="hero_container">
 
         {getLivreurs({id}.id)}
-        {console.log(livreurList.Livreur)}
+        {console.log(livreurList)}
         
         {/* livreurList.map( (val,key) => {
           return (
