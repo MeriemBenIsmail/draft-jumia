@@ -9,13 +9,12 @@ export default function Hero(props) {
 
  const [livreurList,setLivreurList] = useState([]);
   
- 
 
   const getLivreurs = (id) => {
         
             Axios.get('https://jumia0.herokuapp.com/'+id).then( (response) => {
-        
-              setLivreurList(response.data);
+       
+              setLivreurList(response.data[0]);
               
               
             });
@@ -145,7 +144,9 @@ export default function Hero(props) {
         <div className="hero_container">
 
         {getLivreurs({id}.id)}
-        {livreurList.map( (val,key) => {
+        {console.log(livreurList)}
+        
+        {/* livreurList.map( (val,key) => {
           return (
 
           <div className="global" key={key}>
@@ -239,7 +240,7 @@ export default function Hero(props) {
             
           </div>
           );
-        })}
+        }) */}
         </div>
 
         <div id="tables">
