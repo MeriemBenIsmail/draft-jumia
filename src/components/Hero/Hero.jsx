@@ -145,7 +145,7 @@ export default function Hero(props) {
 
         {getLivreurs({id}.id)}
         {console.log(livreurList)}
-        { 
+        { /* 
 
           <div className="global">
 
@@ -172,7 +172,7 @@ export default function Hero(props) {
             
           </div>
           
-        }
+        */} 
         </div>
 
         <div id="tables">
