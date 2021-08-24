@@ -9,12 +9,13 @@ export default function Hero(props) {
 
  const [livreurList,setLivreurList] = useState([]);
   
+ 
 
   const getLivreurs = (id) => {
         
             Axios.get('https://jumia0.herokuapp.com/'+id).then( (response) => {
-       
-              setLivreurList(response.data[0]);
+        
+              setLivreurList(response.data);
               
               
             });
@@ -144,17 +145,17 @@ export default function Hero(props) {
         <div className="hero_container">
 
         {getLivreurs({id}.id)}
-        
-        { /* 
+        {livreurList.map( (val,key) => {
+          return (
 
-          <div className="global">
+          <div className="global" key={key}>
 
             <div className="hero_item">
               <h3 className="label">
                 Nombre De Transaction Total 
               </h3>
               <h4 className="content">
-                {livreurList.Nombre_de_transaction}
+                {val.Nombre_de_transaction}
               </h4>
 
             </div>
@@ -163,16 +164,82 @@ export default function Hero(props) {
                 Date De La Dernière Transaction
               </h3>
               <h4 className="content">
-                {livreurList.Derniere_Transaction.split('T')[0]+" "+livreurList.Derniere_Transaction.split('T')[1].split('.')[0]}
+                {val.Derniere_Transaction.split('T')[0]+" "+val.Derniere_Transaction.split('T')[1].split('.')[0]}
               </h4>
                         
             </div>
+                 {getDay(val.Derniere_Transaction,val.Derniere_Transaction,{id}.id)}
+                 {day.map( (val,key) => {
+                      
+          
+                    dayData[0].DernierJourActif=val.DernierJourActif;
+                
+                
+                  })}
+                 {getDay_1(val.Derniere_Transaction,val.Derniere_Transaction,{id}.id)}
+                 {day_1.map( (val,key) => {
+                      
+          
+                      if(val.DernierJourActif_1){
+                        dayData[0].DernierJourActif_1=val.DernierJourActif_1;
+
+                      } else {
+                        dayData[0].DernierJourActif_1='0';
+
+                      }
+                    
+                
+                
+                  })}
+                  {getEvalPic(dayData,dayData[0].DernierJourActif_1,dayData[0].DernierJourActif)}
                  
+                 {getMonth(val.Derniere_Transaction,{id}.id)}
+                 {month.map( (val,key) => {
+                      
+                
+                    monthData[0].DernierMoisActif=val.DernierMoisActif;
+                
+
+                  })}
+                 {getMonth_1(val.Derniere_Transaction,{id}.id)}
+                 {month_1.map( (val,key) => {
+                      
+                
+                      if(val.DernierMoisActif_1){
+                        monthData[0].DernierMoisActif_1=val.DernierMoisActif_1;
+
+                      } else {
+                        monthData[0].DernierMoisActif_1='0';
+                      }
+                    
+                
+
+                })}
+                  {getEvalPic(monthData,monthData[0].DernierMoisActif_1,monthData[0].DernierMoisActif)}
+                 {getYear(val.Derniere_Transaction,{id}.id)}
+                  {year.map( (val,key) => {
+                        
+                    yearData[0].DernièreAnnéeActive= val.DernierAnnéeActive;
+                  
+                  })} 
+                  {getYear_1(val.Derniere_Transaction,{id}.id)}
+                  {year_1.map( (val,key) => {
+                        
+                        if(val.DernierAnnéeActive_1){
+                          yearData[0].DernièreAnnéeActive_1= val.DernierAnnéeActive_1;
+
+                        } else {
+                          yearData[0].DernièreAnnéeActive_1= '0';
+                        }
+                    
+                  
+                  })}
+                  {getEvalPic(yearData,yearData[0].DernièreAnnéeActive_1,yearData[0].DernièreAnnéeActive)}
             
             
           </div>
-          
-        */} 
+          );
+        })}
         </div>
 
         <div id="tables">
