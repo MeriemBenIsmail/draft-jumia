@@ -122,7 +122,6 @@ export default function Hero(props) {
 
     }
   }
- 
 
   return (
     
@@ -145,101 +144,56 @@ export default function Hero(props) {
         <div className="hero_container">
 
         {getLivreurs({id}.id)}
-        {livreurList.map( (val,key) => {
-          return (
+        {
+          
 
-          <div className="global" key={key}>
+          <div className="global">
 
             <div className="hero_item">
               <h3 className="label">
                 Nombre De Transaction Total 
               </h3>
               <h4 className="content">
-                {val.Nombre_de_transaction}
+                {livreurList[0].Nombre_de_transaction}
               </h4>
 
             </div>
             <div className="hero_item">
+
               <h3 className="label">
                 Date De La Dernière Transaction
               </h3>
               <h4 className="content">
-                {val.Derniere_Transaction.split('T')[0]+" "+val.Derniere_Transaction.split('T')[1].split('.')[0]}
+                {livreurList[0].Derniere_Transaction.split('T')[0]+" "+livreurList[0].Derniere_Transaction.split('T')[1].split('.')[0]}
               </h4>
                         
             </div>
-                 {getDay(val.Derniere_Transaction,val.Derniere_Transaction,{id}.id)}
-                 {day.map( (val,key) => {
-                      
-          
-                    dayData[0].DernierJourActif=val.DernierJourActif;
-                
-                
-                  })}
-                 {getDay_1(val.Derniere_Transaction,val.Derniere_Transaction,{id}.id)}
-                 {day_1.map( (val,key) => {
-                      
-          
-                      if(val.DernierJourActif_1){
-                        dayData[0].DernierJourActif_1=val.DernierJourActif_1;
-
-                      } else {
-                        dayData[0].DernierJourActif_1='0';
-
-                      }
-                    
-                
-                
-                  })}
-                  {getEvalPic(dayData,dayData[0].DernierJourActif_1,dayData[0].DernierJourActif)}
                  
-                 {getMonth(val.Derniere_Transaction,{id}.id)}
-                 {month.map( (val,key) => {
-                      
-                
-                    monthData[0].DernierMoisActif=val.DernierMoisActif;
-                
+                 {getDay(livreurList[0].Derniere_Transaction,livreurList[0].Derniere_Transaction,{id}.id)}
+                 {dayData[0].DernierJourActif=day[0].DernierJourActif}
+                 
+                 {getDay_1(livreurList[0].Derniere_Transaction,livreurList[0].Derniere_Transaction,{id}.id)}
+                 {dayData[0].DernierJourActif_1=day_1[0].DernierJourActif_1}
+                 {getEvalPic(dayData,dayData[0].DernierJourActif_1,dayData[0].DernierJourActif)}
+                 
+                 {getMonth(livreurList[0].Derniere_Transaction,{id}.id)}
+                 {monthData[0].DernierMoisActif=month[0].DernierMoisActif}
 
-                  })}
-                 {getMonth_1(val.Derniere_Transaction,{id}.id)}
-                 {month_1.map( (val,key) => {
-                      
-                
-                      if(val.DernierMoisActif_1){
-                        monthData[0].DernierMoisActif_1=val.DernierMoisActif_1;
+                 {getMonth_1(livreurList[0].Derniere_Transaction,{id}.id)}
+                 {monthData[0].DernierMoisActif_1=month_1[0].DernierMoisActif_1 }
 
-                      } else {
-                        monthData[0].DernierMoisActif_1='0';
-                      }
-                    
-                
+                 {getEvalPic(monthData,monthData[0].DernierMoisActif_1,monthData[0].DernierMoisActif)}
 
-                })}
-                  {getEvalPic(monthData,monthData[0].DernierMoisActif_1,monthData[0].DernierMoisActif)}
-                 {getYear(val.Derniere_Transaction,{id}.id)}
-                  {year.map( (val,key) => {
-                        
-                    yearData[0].DernièreAnnéeActive= val.DernierAnnéeActive;
-                  
-                  })} 
-                  {getYear_1(val.Derniere_Transaction,{id}.id)}
-                  {year_1.map( (val,key) => {
-                        
-                        if(val.DernierAnnéeActive_1){
-                          yearData[0].DernièreAnnéeActive_1= val.DernierAnnéeActive_1;
-
-                        } else {
-                          yearData[0].DernièreAnnéeActive_1= '0';
-                        }
-                    
-                  
-                  })}
+                 {getYear(livreurList[0].Derniere_Transaction,{id}.id)}
+                  {yearData[0].DernièreAnnéeActive= year[0].DernierAnnéeActive} 
+                  {getYear_1(livreurList[0].Derniere_Transaction,{id}.id)}
+                  {yearData[0].DernièreAnnéeActive_1= year_1[0].DernierAnnéeActive_1}
                   {getEvalPic(yearData,yearData[0].DernièreAnnéeActive_1,yearData[0].DernièreAnnéeActive)}
             
             
           </div>
-          );
-        })}
+          
+        }
         </div>
 
         <div id="tables">
